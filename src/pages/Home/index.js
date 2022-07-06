@@ -28,6 +28,7 @@ const Home = () => {
         },
       });
     }
+    // eslint-disable-next-line
   }, [dataMessages]);
   return (
     <>
