@@ -28,7 +28,7 @@ const SidebarNav = () => {
   return (
     <div className="sidebarNav">
       <ul className="sidebarNav__up">
-        {selectedUser ? (
+        {selectedUser && window.innerWidth < 500 ? (
           <>
             <li
               className="sidebarNav__back"
@@ -77,9 +77,9 @@ const SidebarNav = () => {
             <img src="/images/icons/clock.svg" alt="clock" />
           </Link>
         </li>
-        <li className="sidebarNav__icon">
+        {/* <li className="sidebarNav__icon">
           <img src="/images/icons/phone_outline.svg" alt="phone_outline" />
-        </li>
+        </li> */}
       </ul>
       <ul className="sidebarNav__down">
         <li

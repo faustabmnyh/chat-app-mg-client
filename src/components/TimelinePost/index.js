@@ -27,7 +27,7 @@ const TimelinePost = ({ post }) => {
 
   const [deletePost] = useMutation(DELETE_POST, {
     onCompleted(data) {
-      alert(data.deletePost);
+      // alert(data.deletePost);
     },
   });
 
@@ -60,17 +60,15 @@ const TimelinePost = ({ post }) => {
     setConfirmDelete((confirmDelete) => !confirmDelete);
   };
 
+  console.log(post);
+
   return (
     <>
-      <div className={!post.imageUrl ? "timelinePost" : "timelinePost image"}>
-        <div
-          className={
-            !post.imageUrl ? "timelinePost__user" : "timelinePost__user image"
-          }
-        >
+      <div className={"timelinePost"}>
+        <div className={"timelinePost__user"}>
           <div className="timelinePost__header">
             <img
-              src="/images/icons/profile.png"
+              src={post.imageUrl || "/images/icons/profile.png"}
               alt="person"
               className="timelinePost__person"
             />
@@ -98,20 +96,7 @@ const TimelinePost = ({ post }) => {
             />
           )}
         </div>
-        <div>
-          {post.imageUrl && (
-            <div className="timelinePost__image">
-              <img src="/images/pictures/town.png" alt="architecture" />
-            </div>
-          )}
-        </div>
-        <div
-          className={
-            !post.imageUrl
-              ? "timelinePost__contentText"
-              : "timelinePost__contentText image"
-          }
-        >
+        <div className={"timelinePost__contentText"}>
           {post.sticker && (
             <p className="timelinePost__stickerBody">{post.sticker}</p>
           )}

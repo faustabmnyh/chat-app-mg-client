@@ -10,6 +10,7 @@ export const CREATE_COMMENT = gql`
       likeCount
       createdAt
       sticker
+      imageUrl
       comments {
         body
         id
@@ -35,6 +36,7 @@ export const DELETE_COMMENT = gql`
       commentCount
       likeCount
       createdAt
+      imageUrl
       sticker
       comments {
         body

@@ -21,32 +21,14 @@ const CommentIcons = ({ post, setOpenComment }) => {
   }, [post, user]);
 
   return (
-    <div
-      className={
-        !post.imageUrl
-          ? "commentIcons__contentIcons"
-          : "commentIcons__contentIcons image"
-      }
-    >
+    <div className={"commentIcons__contentIcons"}>
       <div className="commentIcons__iconsIcon">
         {liked ? (
-          <span
-            onClick={likePost}
-            className={
-              !post.imageUrl
-                ? "commentIcons__icon likes"
-                : "commentIcons__icon image"
-            }
-          >
+          <span onClick={likePost} className={"commentIcons__icon likes"}>
             <i className="fa fa-heart" />
           </span>
         ) : (
-          <span
-            className={
-              !post.imageUrl ? "commentIcons__icon" : "commentIcons__icon image"
-            }
-            onClick={likePost}
-          >
+          <span className={"commentIcons__icon"} onClick={likePost}>
             <i class="fa fa-heart-o" />
           </span>
         )}
@@ -54,9 +36,7 @@ const CommentIcons = ({ post, setOpenComment }) => {
           src="/images/icons/message_circle.svg"
           alt="message"
           onClick={setOpenComment}
-          className={
-            !post.imageUrl ? "commentIcons__icon" : "commentIcons__icon image"
-          }
+          className={"commentIcons__icon"}
         />
       </div>
       <p>

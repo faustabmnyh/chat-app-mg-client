@@ -2,7 +2,7 @@ import {
   ApolloProvider as Provider,
   InMemoryCache,
   ApolloClient,
-  createHttpLink,
+  // createHttpLink,
   split,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
@@ -11,6 +11,7 @@ import { getMainDefinition } from "@apollo/client/utilities";
 import { createUploadLink } from "apollo-upload-client";
 
 let httpLink = createUploadLink({
+  // uri: "http://localhost:4000",
   uri: "https://chat-app-mg.herokuapp.com/",
 });
 
@@ -30,6 +31,7 @@ httpLink = authLink.concat(httpLink);
 
 // subscription
 const wsLink = new WebSocketLink({
+  // uri: "ws://localhost:4000/graphql",
   uri: "ws://chat-app-mg.herokuapp.com/graphql",
   options: {
     reconnect: true,

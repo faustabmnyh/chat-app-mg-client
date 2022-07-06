@@ -135,13 +135,13 @@ const Timeline = () => {
                   </div>
                 )}
               </div>
-              <img
+              {/* <img
                 src="/images/icons/image_alt.svg"
                 alt="image_alt"
                 className={
                   writePost ? "timeline__icon write" : "timeline__icon"
                 }
-              />
+              /> */}
             </div>
             {writePost && (
               <div>

@@ -1,4 +1,5 @@
 import moment from "moment";
+import { useSelector } from "react-redux";
 import DeleteComment from "../DeleteComment";
 import "./Comment.css";
 
@@ -11,6 +12,8 @@ const Comment = ({
   stickers,
   addSticker,
 }) => {
+  const userLogin = useSelector((state) => state.userLogin);
+  const { user } = userLogin;
   return (
     <>
       <div className="comment__allComments">
@@ -19,7 +22,7 @@ const Comment = ({
             <li key={comment.id}>
               <div className="comment__commentContainer">
                 <img
-                  src="/images/icons/profile.png"
+                  src={comment.imageUrl || "/images/icons/profile.png"}
                   alt="person"
                   className="comment__person"
                 />
@@ -45,7 +48,7 @@ const Comment = ({
       <form className="comment__comment" onSubmit={handleSendComment}>
         <div className="comment__commentInput">
           <img
-            src="/images/icons/profile.png"
+            src={user.imageUrl || "/images/icons/profile.png"}
             alt="person"
             className="comment__person"
           />

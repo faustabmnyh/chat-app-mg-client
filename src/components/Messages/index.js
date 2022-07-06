@@ -5,7 +5,7 @@ import { SET_USER_MESSAGES } from "../../constants/messageConstants";
 import { GET_MESSAGES, SEND_MESSAGE } from "../../graphql/messages";
 import InputMessage from "../InputMessage";
 import Message from "./Message";
-import moment from "moment";
+// import moment from "moment";
 import "./Messages.css";
 
 const Messages = () => {
@@ -16,10 +16,9 @@ const Messages = () => {
   const selectedUser = users?.find((u) => u.selected);
   const messages = selectedUser?.messages;
   const [sendMessage] = useMutation(SEND_MESSAGE);
-  const [prevDay, setPrevDay] = useState(1);
-  const [getMessages, { loading: loadingMessages, data }] = useLazyQuery(
-    GET_MESSAGES
-  );
+  // const [prevDay, setPrevDay] = useState(1);
+  const [getMessages, { loading: loadingMessages, data }] =
+    useLazyQuery(GET_MESSAGES);
 
   // TODO: See the ecom code and whe want to implement the category in here and replace that ti time
 
@@ -39,6 +38,7 @@ const Messages = () => {
         },
       });
     }
+    // eslint-disable-next-line
   }, [data]);
 
   const handleMessage = (e) => {
@@ -70,7 +70,7 @@ const Messages = () => {
           </div>
         ) : loadingMessages ? null : messages.length > 0 ? (
           messages.map((message) => (
-            <Message message={message} key={message.id} />
+            <Message message={message} key={message.id} users={users} />
           ))
         ) : messages.length === 0 ? (
           <div className="messages__noSelected">

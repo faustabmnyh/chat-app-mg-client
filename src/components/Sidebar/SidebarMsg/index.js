@@ -28,9 +28,11 @@ const SidebarMsg = ({ loading, users, selectedUser }) => {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
 
+  console.log(users);
+
   return (
     <>
-      {users.length === 0 && (
+      {users?.length === 0 && (
         <div className="sidebarMsg__progress">
           <p>You have no friends.</p>
         </div>
@@ -46,7 +48,7 @@ const SidebarMsg = ({ loading, users, selectedUser }) => {
           onClick={() => handleSelectedMessage(user)}
         >
           <img
-            src={user.imageUrl ? user.imageUrl : "/images/icons/profile.png"}
+            src={user.imageUrl || "/images/icons/profile.png"}
             alt="avatar"
             className="sidebarMsg__person"
           />

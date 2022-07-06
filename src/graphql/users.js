@@ -5,6 +5,7 @@ export const GET_USERS = gql`
   query getUsers($username: String) {
     getUsers(username: $username) {
       username
+      imageUrl
       latestMessage {
         from
         to
@@ -52,12 +53,14 @@ export const UPDATE_USER = gql`
     $email: String
     $password: String
     $confirmPassword: String
+    $imageUrl: String
   ) {
     updateUser(
       username: $username
       email: $email
       password: $password
       confirmPassword: $confirmPassword
+      imageUrl: $imageUrl
     ) {
       username
       email

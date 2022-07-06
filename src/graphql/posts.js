@@ -10,10 +10,12 @@ export const GET_POSTS = gql`
       likeCount
       createdAt
       sticker
+      imageUrl
       comments {
         body
         id
         sticker
+        imageUrl
         username
         createdAt
       }
@@ -36,10 +38,12 @@ export const CREATE_POST = gql`
       likeCount
       createdAt
       sticker
+      imageUrl
       comments {
         body
         id
         sticker
+        imageUrl
         username
         createdAt
       }
@@ -62,9 +66,11 @@ export const NEW_POST = gql`
       likeCount
       createdAt
       sticker
+      imageUrl
       comments {
         body
         id
+        imageUrl
         sticker
         username
         createdAt
@@ -93,10 +99,12 @@ export const LIKE_POST = gql`
       commentCount
       likeCount
       createdAt
+      imageUrl
       sticker
       comments {
         body
         id
+        imageUrl
         sticker
         username
         createdAt
@@ -119,10 +127,12 @@ export const UPDATE_POST_PROFILE = gql`
       commentCount
       likeCount
       createdAt
+      imageUrl
       sticker
       comments {
         body
         id
+        imageUrl
         sticker
         username
         createdAt
