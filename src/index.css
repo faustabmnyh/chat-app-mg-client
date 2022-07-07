@@ -21,6 +21,10 @@ ul {
   list-style: none;
 }
 
+li {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
 a {
   text-decoration: none;
   color: black;

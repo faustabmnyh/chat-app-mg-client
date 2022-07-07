@@ -222,6 +222,7 @@
 
   .profile__userImage {
     max-width: 130px;
+    height: 130px;
   }
 
   .profile__formEdit input {
