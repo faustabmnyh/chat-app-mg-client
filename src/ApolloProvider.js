@@ -32,7 +32,7 @@ httpLink = authLink.concat(httpLink);
 // subscription
 const wsLink = new WebSocketLink({
   // uri: "ws://localhost:4000/graphql",
-  uri: "ws://chat-app-mg.herokuapp.com/graphql",
+  uri: "wss://chat-app-mg.herokuapp.com/graphql",
   options: {
     reconnect: true,
     connectionParams: {
